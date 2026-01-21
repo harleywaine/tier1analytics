@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border-card;
+  }
+  
+  body {
+    @apply bg-bg-primary text-text-primary font-light;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+}
+
+@layer components {
+  /* Card Component */
+  .card {
+    @apply bg-card-bg border border-border-card rounded-card p-6 shadow-card;
+    backdrop-filter: blur(25px);
+    min-height: 140px;
+  }
+  
+  /* Primary Button */
+  .btn-primary {
+    @apply bg-button-primary text-button-primary-text rounded-button px-6 py-4 font-normal text-lg shadow-button;
+    letter-spacing: 0.5px;
+    transition: transform 100ms ease, box-shadow 100ms ease;
+  }
+  
+  .btn-primary:hover {
+    transform: scale(0.98);
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    @apply bg-button-secondary-bg border border-accent-primary-border text-text-primary rounded-button px-6 py-4 font-normal text-lg;
+    letter-spacing: 0.5px;
+    transition: transform 100ms ease, background-color 100ms ease;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-accent-primary-bg;
+    transform: scale(0.98);
+  }
+  
+  .btn-secondary:active {
+    transform: scale(0.95);
+  }
+  
+  /* Input Fields */
+  .input {
+    @apply bg-bg-secondary border border-border-secondary rounded-input px-4 py-4 text-text-primary placeholder-text-tertiary;
+    font-size: 12px;
+    transition: border-color 200ms ease;
+  }
+  
+  .input:focus {
+    @apply border-accent-primary outline-none;
+    box-shadow: 0 0 0 3px rgba(77, 82, 96, 0.1);
+  }
+  
+  .input:disabled {
+    @apply bg-bg-tertiary text-text-tertiary cursor-not-allowed;
+  }
+  
+  /* Table Styles */
+  .table-container {
+    @apply bg-card-bg border border-border-card rounded-card overflow-hidden;
+    backdrop-filter: blur(25px);
+  }
+  
+  .table-header {
+    @apply bg-bg-secondary border-b border-border-card;
+  }
+  
+  .table-row {
+    @apply border-b border-border-card transition-colors;
+  }
+  
+  .table-row:hover {
+    @apply bg-accent-primary-bg;
+  }
+  
+  /* Metric Card */
+  .metric-card {
+    @apply card;
+  }
+  
+  /* Link Styles */
+  .link {
+    @apply text-accent-secondary transition-colors;
+  }
+  
+  .link:hover {
+    @apply text-accent-secondary-glow;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    @apply bg-bg-secondary rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full transition-all duration-300;
+  }
+  
+  /* Badge/Pill */
+  .badge {
+    @apply px-3 py-1 rounded-button text-xs font-normal;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Glass Effect */
+  .glass {
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+}
+
+@layer utilities {
+  /* Text Utilities */
+  .text-heading {
+    @apply font-light;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+  
+  .text-body {
+    @apply font-light;
+    line-height: 1.5;
+    letter-spacing: 0px;
+  }
+  
+  .text-label {
+    @apply font-light text-xs;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 300ms ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 160ms ease-out;
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulseSubtle 1000ms ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent-primary-border;
+}
+
+/* Selection Styling */
+::selection {
+  @apply bg-accent-secondary-bg text-text-primary;
+}
