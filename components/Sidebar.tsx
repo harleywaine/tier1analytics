@@ -20,7 +20,7 @@ import { useSidebar } from './SidebarContext'
 interface NavItem {
   name: string
   href: string
-  icon: React.ComponentType<{ size?: number; weight?: string; className?: string }>
+  icon: React.ComponentType<any>
 }
 
 const navigation: NavItem[] = [
