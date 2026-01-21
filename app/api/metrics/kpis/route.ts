@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { getKpis } from '@/lib/metrics'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   try {
     const kpis = await getKpis()

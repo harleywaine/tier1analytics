@@ -1,5 +1,5 @@
 import { createServerClient } from './supabase-server'
-import type { KpisResponse, TrendsResponse, TopSessionsResponse } from './db/types'
+import type { KpisResponse, TrendsResponse, TopSessionsResponse, TopSession } from './db/types'
 
 /**
  * Get start and end dates for a period
