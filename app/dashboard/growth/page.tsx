@@ -86,7 +86,8 @@ export default function GrowthPage() {
 
   useEffect(() => {
     loadData()
-  }, [router])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const handleRefresh = () => {
     setLoading(true)
